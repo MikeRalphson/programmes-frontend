@@ -12,7 +12,7 @@ framework:
     #translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
     router:
-        resource: '%kernel.root_dir%/config/routing.yml'
+        resource: '%kernel.root_dir%/../config/routing.yml'
         strict_requirements: ~
     default_locale: '%locale%'
     trusted_hosts: ~
@@ -26,6 +26,9 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    paths:
+        '%kernel.root_dir%/../resources/views': 'App'
+
 
 # Doctrine Configuration
 doctrine:

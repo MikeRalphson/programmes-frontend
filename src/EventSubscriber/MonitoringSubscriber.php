@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
-namespace AppBundle\EventSubscriber;
+
+namespace App\EventSubscriber;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
