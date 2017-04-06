@@ -80,8 +80,17 @@ csa_guzzle:
     clients:
         default:
             config:
-                cert: '/etc/pki/dev.bbc.co.uk.pem'
-                ssl_key: '/etc/pki/dev.bbc.co.uk.pem'
+                cert: '/etc/pki/tls/certs/client.crt'
+                ssl_key: '/etc/pki/tls/private/client.key'
                 verify: false
                 timeout: 60
                 connect_timeout: 10
+        proxy:
+            config:
+                cert: '/etc/pki/tls/certs/client.crt'
+                ssl_key: '/etc/pki/tls/private/client.key'
+                verify: false
+                timeout: 20
+                connect_timeout: 5
+                http_errors: false
+                force_ip_resolve: v4

@@ -17,5 +17,5 @@ find_by_pid:
 
 cloud_labs:
     path: /programmes/_cloudlabs{wildcard}
-    defaults: { _controller: AppBundle\Controller\CloudLabsController::showAction }
+    defaults: { _controller: AppBundle\Controller\CloudLabsController::proxyAction }
     requirements: { wildcard: '^(/.*|$)' }

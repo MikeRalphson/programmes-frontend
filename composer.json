@@ -25,6 +25,7 @@
         "bbc/branding-client": "^1.1",
         "bbc/programmes-pages-service": "dev-master@dev",
         "csa/guzzle-bundle": "dev-master@dev",
+        "guzzlehttp/guzzle": "dev-master@dev",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/doctrine-cache-bundle": "^1.2",
         "doctrine/orm": "^2.5",
@@ -33,6 +34,8 @@
         "stof/doctrine-extensions-bundle": "^1.2",
         "symfony/monolog-bundle": "^3.1",
         "symfony/symfony": "3.3.x-dev",
+        "jenssegers/proxy": "dev-master@dev",
+        "symfony/psr-http-message-bridge": "^1.0",
         "twig/twig": "^2.0"
     },
     "require-dev": {
