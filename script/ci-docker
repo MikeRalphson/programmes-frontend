@@ -25,6 +25,11 @@ if [ ! -d "build/reports" ]; then
 fi
 
 php composer.phar --no-ansi --no-interaction install
+
+if [ ! -d "/mnt/node_modules/node-sass/vendor" ]; then
+    mkdir -p /mnt/node_modules/node-sass/vendor
+fi
+
 yarn install
 
 # Show php version for debugging

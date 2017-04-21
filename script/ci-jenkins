@@ -21,7 +21,12 @@ else
     echo "Running cosmos-build..."
 	BUILD_COMMAND="cosmos-build"
 fi
-$BUILD_COMMAND -s docker -i registry.ci.rmp.api.bbci.co.uk/programmes-docker-base
+
+$BUILD_COMMAND -s docker -i registry.ci.rmp.api.bbci.co.uk/programmes-docker-base \
+--static-assets=$STATIC_ASSETS \
+--static-assets-bucket=$STATIC_ASSETS_BUCKET \
+--static-assets-bucket-region=$STATIC_ASSETS_BUCKET_REGION \
+--static-assets-bucket-role-arn=$STATIC_ASSETS_BUCKET_ROLE_ARN
 
 echo "Stopping container..."
 docker stop registry.ci.rmp.api.bbci.co.uk/programmes-docker-base || true
