@@ -22,12 +22,12 @@ else
 	BUILD_COMMAND="cosmos-build"
 fi
 
-echo "Building RPM with $BUILD_COMMAND...."
-$BUILD_COMMAND -s docker -i registry.ci.rmp.api.bbci.co.uk/programmes-docker-base --rpmversion $version
-
 os=`cosmos-release guess-os RPMS/*.el6*.rpm`
 source=`cosmos-release describe-checkout`
 version=`cosmos-release generate-version programmes-frontend`
+
+echo "Building RPM with $BUILD_COMMAND...."
+$BUILD_COMMAND -s docker -i registry.ci.rmp.api.bbci.co.uk/programmes-docker-base --rpmversion $version
 echo 'COSMOS-RELEASE: Sending RPM metadata to cosmos.....'
 cosmos-release service programmes-frontend RPMS/*.rpm --release-version $version --os $os
 echo 'COSMOS-RELEASE: Publishing assets.....'
