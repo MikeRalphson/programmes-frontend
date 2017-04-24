@@ -37,7 +37,7 @@ os=`cosmos-release guess-os RPMS/*.el6*.rpm`
 echo "RPM operating system:  $os"
 echo `pwd`
 
-source=`cosmos-release describe-checkout git git@github.com:bbc/programmes-frontend.git 04af7536569a7285c8dd47b02128181a67e7ec71`
+source=`cosmos-release describe-checkout . git git@github.com:bbc/programmes-frontend.git 04af7536569a7285c8dd47b02128181a67e7ec71`
 echo "-- SOURCE:  $source --------"
 
 
