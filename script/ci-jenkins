@@ -28,5 +28,16 @@ $BUILD_COMMAND -s docker -i registry.ci.rmp.api.bbci.co.uk/programmes-docker-bas
 --static-assets-bucket-region=$STATIC_ASSETS_BUCKET_REGION \
 --static-assets-bucket-role-arn=$STATIC_ASSETS_BUCKET_ROLE_ARN
 
+
+
+
+# Upload local RPMs to a repository named cosmos-<component>
+os=`cosmos-release guess-os RPMS/*.el6*.rpm`
+source=`cosmos-release describe-checkout git git@github.com:bbc/programmes-frontend.git 04af7536569a7285c8dd47b02128181a67e7ec71`
+
+echo "-- OS:  $os --------"
+echo "-- SOURCE:  $source --------"
+
+
 echo "Stopping container..."
 docker stop registry.ci.rmp.api.bbci.co.uk/programmes-docker-base || true
