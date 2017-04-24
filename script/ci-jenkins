@@ -13,35 +13,20 @@ docker stop registry.ci.rmp.api.bbci.co.uk/programmes-docker-base || true
 echo "Running CI in container..."
 docker run --rm -u `id -u`:`id -g` -e OAUTH="$OAUTH_TOKEN" -v "$WORKSPACE":/mnt/ registry.ci.rmp.api.bbci.co.uk/programmes-docker-base script/ci-docker
 
-if [ "$BUILD_TYPE" = "pull-request" ]
-then
-    echo "Running mbt..."
-	BUILD_COMMAND="mbt"
-else
-    echo "Running cosmos-build..."
-	BUILD_COMMAND="cosmos-build"
-fi
-
-
-
-
-
-
-# Upload local RPMs to a repository named cosmos-<component>
 echo 'running COSMOS-RELEASE....'
 
 os=`cosmos-release guess-os RPMS/*.el6*.rpm`
 source=`cosmos-release describe-checkout`
 version=`cosmos-release generate-version programmes-frontend`
 
-
-echo "RPM operating system:  $os"
-echo "RPM generated from checkout:  $source"
-echo "New version generated for cosmos:  $version"
-
 mbt -s docker -i registry.ci.rmp.api.bbci.co.uk/programmes-docker-base --rpmversion $version
 cosmos-release service programmes-frontend RPMS/*.rpm --release-version $version --os $os
 
+
+cosmos-release publish-assets \
+--role $STATIC_ASSETS_BUCKET_ROLE_ARN \
+$STATIC_ASSETS \
+"$STATIC_ASSETS_BUCKET/programmes-frontend"
 
 echo "Stopping container..."
 docker stop registry.ci.rmp.api.bbci.co.uk/programmes-docker-base || true
