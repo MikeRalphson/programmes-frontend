@@ -35,7 +35,7 @@ $BUILD_COMMAND -s docker -i registry.ci.rmp.api.bbci.co.uk/programmes-docker-bas
 echo 'running COSMOS-RELEASE....'
 os=`cosmos-release guess-os RPMS/*.el6*.rpm`
 source=`cosmos-release describe-checkout`
-version=`cosmos-release generate-version my-component-name`
+version=`cosmos-release generate-version programmes-frontend`
 
 
 echo "RPM operating system:  $os"
