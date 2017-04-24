@@ -22,7 +22,7 @@ else
 	BUILD_COMMAND="cosmos-build"
 fi
 
-mbt -s docker -i registry.ci.rmp.api.bbci.co.uk/programmes-docker-base 
+mbt -s docker -i registry.ci.rmp.api.bbci.co.uk/programmes-docker-base
 
 
 
@@ -39,7 +39,7 @@ echo "RPM operating system:  $os"
 echo "RPM generated from checkout:  $source"
 echo "New version generated for cosmos:  $version"
 
-cosmos-release service programmes-frontend RPMS/*.rpm
+cosmos-release service programmes-frontend RPMS/*.rpm --release-version $version --os $os
 
 
 echo "Stopping container..."
