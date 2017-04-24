@@ -34,10 +34,13 @@ $BUILD_COMMAND -s docker -i registry.ci.rmp.api.bbci.co.uk/programmes-docker-bas
 # Upload local RPMs to a repository named cosmos-<component>
 echo 'running COSMOS-RELEASE....'
 os=`cosmos-release guess-os RPMS/*.el6*.rpm`
-echo "RPM operating system:  $os"
-
 source=`cosmos-release describe-checkout`
-echo ":  $source --------"
+version=`cosmos-release generate-version my-component-name`
+
+
+echo "RPM operating system:  $os"
+echo "RPM generated from checkout:  $source"
+echo "New version generated for cosmos:  $version"
 
 
 echo "Stopping container..."
