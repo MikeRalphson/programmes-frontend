@@ -111,6 +111,13 @@ services:
 
 
     ### Programmes Service
+
+    # Extended domain model injection for programmes service
+    BBC\ProgrammesPagesService\Mapper\ProgrammesDbToDomain\MapperFactory:
+        arguments:
+            -
+                AtozTitle: '\App\Domain\AtozTitle'
+
     # TODO see if repeating every service here can be replaced with prototype
     # services in Symfony 3.3: https://github.com/symfony/symfony/pull/21289
     BBC\ProgrammesPagesService\Service\ServiceFactory: ~
@@ -122,3 +129,8 @@ services:
     BBC\ProgrammesPagesService\Service\ProgrammesService:
         autowire: false
         factory: [ '@BBC\ProgrammesPagesService\Service\ServiceFactory', 'getProgrammesService']
+
+    BBC\ProgrammesPagesService\Service\AtozTitlesService:
+        autowire: false
+        public: true
+        factory: [ '@BBC\ProgrammesPagesService\Service\ServiceFactory', 'getAtozTitlesService']
