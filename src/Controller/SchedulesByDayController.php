@@ -5,8 +5,6 @@ namespace App\Controller;
 use BBC\ProgrammesPagesService\Domain\ValueObject\Pid;
 use DateTime;
 use Symfony\Component\HttpKernel\Exception\HttpException;
-use Symfony\Component\Validator\Constraints\Date;
-use Symfony\Component\Validator\Constraints\Range;
 
 
 class SchedulesByDayController extends BaseController
@@ -22,8 +20,6 @@ class SchedulesByDayController extends BaseController
         } else {
             $date = new DateTime();
         }
-
-
 
         // TODO lookup Service based on pid
         // TODO get Broadcasts for this date (tv day or radio day)
