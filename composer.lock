@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2b156586b6db091f9aebc2ef8bed77f2",
+    "content-hash": "5638facdd43df45791d7876ac64fb047",
     "packages": [
         {
             "name": "bbc-rmp/translate",
@@ -92,7 +92,7 @@
             ],
             "description": "PHP Branding client",
             "support": {
-                "source": "https://github.com/bbc/branding-client/tree/add-orbit",
+                "source": "https://github.com/bbc/branding-client/tree/v1.3.0",
                 "issues": "https://github.com/bbc/branding-client/issues"
             },
             "time": "2017-04-13T09:06:41+00:00"
@@ -2428,12 +2428,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "3471b5831822d506d38e2639ac69b0cf5cf43b59"
+                "reference": "9d9f628d926aaf34e020ddccb4454ff7c4ce5ceb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/3471b5831822d506d38e2639ac69b0cf5cf43b59",
-                "reference": "3471b5831822d506d38e2639ac69b0cf5cf43b59",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/9d9f628d926aaf34e020ddccb4454ff7c4ce5ceb",
+                "reference": "9d9f628d926aaf34e020ddccb4454ff7c4ce5ceb",
                 "shasum": ""
             },
             "require": {
@@ -2574,7 +2574,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-04-23 22:36:34"
+            "time": "2017-04-27 14:37:41"
         },
         {
             "name": "twig/twig",

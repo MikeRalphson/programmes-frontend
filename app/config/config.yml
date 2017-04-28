@@ -21,6 +21,7 @@ framework:
         base_path: 'assets'
     php_errors:
         log: true
+    validation: { enable_annotations: true }
 
 # Twig Configuration
 twig:
