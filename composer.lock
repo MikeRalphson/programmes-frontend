@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5638facdd43df45791d7876ac64fb047",
+    "content-hash": "2b156586b6db091f9aebc2ef8bed77f2",
     "packages": [
         {
             "name": "bbc-rmp/translate",
