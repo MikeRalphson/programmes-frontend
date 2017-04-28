@@ -105,3 +105,9 @@ services:
     BBC\ProgrammesPagesService\Service\ProgrammesService:
         autowire: false
         factory: [ '@BBC\ProgrammesPagesService\Service\ServiceFactory', 'getProgrammesService']
+
+    BBC\ProgrammesPagesService\Service\ServicesService:
+        autowire: false
+        factory: [ '@BBC\ProgrammesPagesService\Service\ServiceFactory', 'getServicesService']
+
+
